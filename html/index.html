@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Booking System</title>
+ <link rel="stylesheet" href="../css/style.css"> 
+ <link rel="stylesheet" href="../css/dd.css">
+
+</head>
+
+<body>
+
+<header class="header">  
+<div class="logo">🎬 MovieBooking</div>
+
+<div class="search-bar">
+<input type="text" id="search" placeholder="Search for Movies..." onkeyup="searchMovie()">
+<span class="search-icon">🔍</span>
+</div>
+
+<nav>
+    <button id="login-open">Login</button>
+    <button id="logout-btn" style="display:none;">Logout</button>  <!-- ADD THIS -->
+</nav>
+
+</header>
+
+<!-- ✅ PASTE LOGIN POPUP HERE -->
+<div class="login-container" id="login-box">
+    <div class="login-form">
+        <span id="close-login">&times;</span>
+        <h3>Login</h3>
+        <input type="email" placeholder="Enter email" class="box">
+        <div class="password-field">
+            <input type="password" id="loginPassword" placeholder="Enter password" class="box">
+            <button type="button" class="toggle-password" data-target="loginPassword" aria-label="Show password">Show</button>
+        </div>
+        <button class="btn">Login</button>
+        <div class="remember">
+            <input type="checkbox" id="remember-me">
+            <label for="remember-me">Remember me</label>
+        </div>
+        <p>Don't have account? <a href="registration.html">Register Now</a></p>
+    </div>
+</div>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+<h1>Book Movie Tickets Easily</h1>
+<p>Skip the queue and get your digital token instantly</p>
+<a href="movie.html" class="hero-btn">Browse Movies</a>
+</section>
+
+
+<h2 class="section-title">Recommended Movies</h2>
+<section class="slider">
+  <div class="slider-track">
+
+    <div class="movie-card">
+      <img src="../images/Dhurandhar.jpg">
+      <div class="movie-info">
+        <h3>DHURANDHAR</h3>
+        <p>⭐ 9.7 | Action</p>
+        <a href="../html/m1.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="../images/border.jpg">
+      <div class="movie-info">
+        <h3>BORDER 2</h3>
+        <p>⭐ 8.5 | Adventure</p>
+        <a href="../html/m2.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="../images/rrr.jpg">
+      <div class="movie-info">
+        <h3>RRR</h3>
+        <p>⭐ 9.0 | Action</p>
+        <a href="../html/m3.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="../images/maardani.webp">
+      <div class="movie-info">
+        <h3>MAARDANI 3</h3>
+        <p>⭐ 7.9 | Thriller</p>
+        <a href="../html/m4.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="../images/ikkis.jpg">
+      <div class="movie-info">
+        <h3>Ikkis</h3>
+        <p>⭐ 7.9 | Action</p>
+        <a href="../html/m5.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+    <div class="movie-card">
+      <img src="../images/kerala.avif">
+      <div class="movie-info">
+        <h3>The Kerala Story 2</h3>
+        <p>⭐ 8.2 | Drama</p>
+        <a href="../html/m6.html" class="book-btn">Book Now</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ── CONTACT / FOOTER ── -->
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>🎬 MovieBooking</h4>
+            <p>Your trusted movie booking platform. Find the best movies at the best prices.</p>
+        </div>
+       
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>📧 info@moviebooking.com</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📍 Rourkela, Odisha</p>
+        </div>
+    </div>
+   
+
+<footer class="footer">
+<p>© Created by Sneha Sudha Behera</p>
+<p>Movie Token Management System</p>
+</footer>
+
+<script src="../js/config.js"></script>
+<script src="../js/script.js"></script>
+<script src="../js/queue.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Show Time</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/details.css">
+<link rel="stylesheet" href="../css/seats.css">
+<link rel="stylesheet" href="../css/time.css">
+</head>
+
+<body>
+
+<header>
+<div class="logo">🎬 MovieBooking</div>
+
+<nav>
+<a href="index.html">Home</a>
+
+</nav>
+</header>
+
+
+
+<!-- DATE SELECTOR -->
+
+<h2 class="section-title" id="movieTitle"></h2>
+<div class="date-bar" id="dateBar"></div>
+
+
+<!-- CINEMA + TIME SLOTS -->
+
+<div class="cinema-container">
+
+<h3>PVR: Rourkela</h3>
+
+<div class="showtime-grid" id="showtimeGrid">
+</div>
+
+</div>
+
+<p class="note">🟢 Available | 🟡 Fast Filling</p>
+
+
+<!-- SEAT POPUP -->
+<div class="seat-modal" id="seatModal">
+  <div class="modal-content">
+    <h2>How many seats?</h2>
+
+    <div class="seat-numbers">
+      <span onclick="selectSeats(1)">1</span>
+      <span onclick="selectSeats(2)" class="active">2</span>
+      <span onclick="selectSeats(3)">3</span>
+      <span onclick="selectSeats(4)">4</span>
+      <span onclick="selectSeats(5)">5</span>
+      <span onclick="selectSeats(6)">6</span>
+      <span onclick="selectSeats(7)">7</span>
+      <span onclick="selectSeats(8)">8</span>
+      <span onclick="selectSeats(9)">9</span>
+      <span onclick="selectSeats(10)">10</span>
+    </div>
+
+    <button onclick="goToSeatLayout()">Select Seats</button>
+  </div>
+</div>
+
+<footer>
+<p>© Created by Sneha Sudha Behera</p>
+</footer>
+
+<script>
+
+const dateBar = document.getElementById("dateBar");
+
+const days = ["SUN","MON","TUE","WED","THU","FRI","SAT"];
+const months = ["JAN","FEB","MAR","APR","MAY","JUN","JUL","AUG","SEP","OCT","NOV","DEC"];
+
+const today = new Date();
+
+for (let i = 0; i < 7; i++) {
+    let d = new Date();
+    d.setDate(today.getDate() + i);
+
+    const day = days[d.getDay()];
+    const date = d.getDate();
+    const month = months[d.getMonth()];
+
+    const div = document.createElement("div");
+    div.classList.add("date");
+
+    if (i === 0) div.classList.add("active");
+
+    div.innerHTML = `
+        <p>${day}</p>
+        <h3>${date}</h3>
+        <p>${month}</p>
+    `;
+
+ div.onclick = function() {
+    document.querySelectorAll(".date").forEach(d => d.classList.remove("active"));
+    this.classList.add("active");
+
+    // 🔥 save selected day
+    localStorage.setItem("selectedDay", i);
+};
+
+dateBar.appendChild(div);
+}
+
+const savedDay = localStorage.getItem("selectedDay");
+
+if (savedDay !== null) {
+    document.querySelectorAll(".date")[savedDay].click();
+}
+
+</script>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+const movieName = params.get("movie");
+
+document.getElementById("movieTitle").innerText =
+    (movieName || "Movie") + " - Select Date & Time";
+
+// 🎬 SHOWTIME DATA (you can customize)
+const movieShowtimes = {
+    "DHURANDHAR": {
+         "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    },
+    "RRR": {
+        "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    },
+    "BORDER_2": {
+        "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    },
+    "MAARDANI_3": {
+         "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    },
+    "IKKIS": {
+         "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    },
+     "KERALA_STORY_2": {
+         "SUN": ["03:00 PM", "06:00 PM", "09:00 PM", "11:30 PM"],
+        "MON": ["04:00 PM", "08:00 PM", "10:30 PM"],
+        "TUE": ["04:30 PM", "07:30 PM"],
+        "WED": ["03:30 PM", "06:30 PM", "09:30 PM"],
+        "THU": ["05:00 PM", "08:30 PM"],
+        "FRI": ["02:30 PM", "06:00 PM", "09:00 PM", "11:45 PM"],
+        "SAT": ["01:00 PM", "04:00 PM", "07:00 PM", "10:00 PM"]
+    }
+};
+
+// 🎯 LOAD SHOWTIMES
+function loadShowtimes(dayIndex) {
+    const grid = document.getElementById("showtimeGrid");
+    grid.innerHTML = "";
+
+    const dayName = days[(new Date().getDay() + dayIndex) % 7];
+
+    const times = movieShowtimes[movieName]?.[dayName] || [];
+
+    if (times.length === 0) {
+        grid.innerHTML = "<p>No shows available</p>";
+        return;
+    }
+
+    times.forEach((time, i) => {
+        const a = document.createElement("a");
+
+        a.href = "#";
+        a.className = "time-slot " + (i % 2 === 0 ? "available" : "filling");
+        a.innerText = time;
+
+        a.onclick = function() {
+            document.querySelectorAll(".time-slot").forEach(t => t.classList.remove("active"));
+            this.classList.add("active");
+
+            localStorage.setItem("movie", movieName);
+            localStorage.setItem("time", time);
+
+            window.location.href = `seats.html?movie=${movieName}&time=${time}`;
+        };
+
+        grid.appendChild(a);
+    });
+
+    // ✅ KEEP THIS INSIDE FUNCTION
+    const savedTime = localStorage.getItem("time");
+
+    document.querySelectorAll(".time-slot").forEach(slot => {
+        if (slot.innerText === savedTime) {
+            slot.classList.add("active");
+        }
+    });
+}
+
+// 🎯 INITIAL LOAD
+loadShowtimes(0);
+
+// 🎯 CONNECT WITH DATE CLICK
+document.querySelectorAll(".date").forEach((el, index) => {
+    el.addEventListener("click", () => {
+        loadShowtimes(index);
+    });
+});
+
+function goToSeatLayout() {
+    const movie = localStorage.getItem("movie");
+    const time = localStorage.getItem("time");
+
+    if (!time) {
+        alert("Please select a show time first!");
+        return;
+    }
+
+    window.location.href = `seats.html?movie=${movie}&time=${time}`;
+}
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Admin Panel</title>
+<link rel="stylesheet" href="../css/style.css">
+</head>
+ 
+<body>
+
+<header>
+
+<div class="logo">🎬 MovieBooking</div>
+<div class="menu-icon" onclick="openMenu()">☰</div>
+
+
+<nav>
+<a href="index.html">Home</a>
+<a href="login.html">Logout</a>
+</nav>
+
+</header>
+
+<div id="sideMenu" class="side-menu">
+
+<div class="menu-header">
+<h2>Hey Admin!</h2>
+<button onclick="closeMenu()">✕</button>
+</div>
+
+<div class="menu-item">Dashboard</div>
+<div class="menu-item">Bookings</div>
+<div class="menu-item">Movies</div>
+<div class="menu-item">Users</div>
+<div class="menu-item">Reports</div>
+<div class="menu-item">Settings</div>
+
+</div>
+
+<h2 class="section-title">Admin Dashboard</h2>
+
+<div class="admin-box">
+
+<h3>Current Token</h3>
+
+<h1 id="token-number">#25</h1>
+
+<button class="book-btn" onclick="nextToken()">Call Next Token</button>
+
+</div>
+
+<footer>
+
+<p>© Created by Sneha Sudha Behera</p>
+
+</footer>
+
+<script src="../js/script.js"></script>
+</body>
+</html>

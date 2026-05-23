@@ -1,0 +1,661 @@
+/* ===============================
+   GLOBAL STYLING
+================================= */
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI', sans-serif;
+}
+
+body{
+background:#f5f5f5;
+min-width:0;
+}
+
+/* ===============================
+   HEADER / NAVBAR
+================================= */
+header{
+background:white;
+padding:15px 50px;
+display:flex;
+align-items:center;
+justify-content:space-between;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#E50914;
+}
+
+nav{
+display:flex;
+align-items:center;
+gap:20px;
+}
+
+#login-open, #logout-btn {
+background:#E50914;
+color:white;
+border:none;
+padding:8px 18px;
+border-radius:6px;
+cursor:pointer;
+}
+
+#home-btn {
+    background: #E50914;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+    display: inline-block;
+}
+
+#home-btn:hover {
+    background: #c40812;
+}
+
+/* ===============================
+   SEARCH BAR
+================================= */
+.search-bar{
+position:relative;
+display:flex;
+align-items:center;
+}
+
+.search-bar input{
+padding:10px 200px 10px 15px;
+border-radius:5px;
+border:1px solid #ddd;
+}
+
+.search-icon{
+position:absolute;
+right:10px;
+font-size:20px;
+cursor:pointer;
+}
+
+/* ===============================
+   HERO SECTION
+================================= */
+.hero{
+text-align:center;
+padding:60px 20px;
+background:#222;
+color:white;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero-btn{
+display:inline-block;
+margin-top:15px;
+padding:10px 20px;
+background:#E50914;
+color:white;
+border-radius:6px;
+text-decoration:none;
+}
+
+/* ===============================
+   SECTION TITLE
+================================= */
+.section-title{
+font-size:24px;
+margin:40px 50px 20px;
+font-weight:bold;
+}
+
+/* ===============================
+   🎬 SLIDER (MAIN FIX)
+================================= */
+.slider{
+width:940px;   /* EXACTLY 3 CARDS */
+margin:40px auto;
+overflow:hidden;
+}
+
+.slider-track{
+display:flex;
+gap:20px;
+transition:transform 0.5s ease-in-out;
+}
+
+/* ===============================
+   🎬 MOVIE CARD (FIXED)
+================================= */
+/* 🎬 PERFECT MOVIE CARD */
+
+.movie-card {
+    width: 300px;              /* balanced width */
+    flex-shrink: 0;
+
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    transition: 0.3s;
+}
+
+.movie-card:hover {
+    transform: translateY(-6px);
+}
+
+/* POSTER */
+.movie-card img {
+    width: 100%;
+    height: 400px;            /* tall poster */
+    object-fit: cover;        /* 🔥 removes black bars */
+}
+
+/* INFO SECTION */
+.movie-info {
+    padding: 16px;            /* more breathing space */
+    text-align: center;
+}
+
+/* MOVIE NAME */
+.movie-info h3 {
+    font-size: 17px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* RATING TEXT */
+.movie-info p {
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+/* BUTTON */
+.book-btn {
+    display: inline-block;
+    background: #E50914;
+    color: white;
+    padding: 8px 18px;
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer{
+text-align:center;
+margin-top:40px;
+padding:20px;
+background:#111;
+color:white;
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media(max-width:768px){
+
+body {
+overflow-x:hidden;
+}
+
+header {
+padding:12px 14px;
+flex-wrap:wrap;
+gap:12px;
+}
+
+.logo {
+font-size:18px;
+max-width:100%;
+}
+
+nav {
+gap:10px;
+}
+
+#login-open, #logout-btn {
+padding:8px 14px;
+font-size:13px;
+}
+
+.search-bar {
+order:3;
+width:100%;
+}
+
+.search-bar input {
+width:100%;
+padding:10px 40px 10px 12px;
+}
+
+.hero {
+padding:42px 18px;
+}
+
+.hero h1 {
+font-size:28px;
+line-height:1.2;
+}
+
+.hero p {
+font-size:15px;
+margin-top:8px;
+}
+
+.section-title {
+font-size:20px;
+margin:28px 16px 14px;
+}
+
+.slider{
+width:100%;
+padding:0 16px 8px;
+margin:24px auto;
+overflow-x:auto;
+scroll-snap-type:x mandatory;
+}
+
+.slider-track {
+gap:14px;
+}
+
+.movie-card{
+width:78vw;
+max-width:280px;
+scroll-snap-align:start;
+border-radius:8px;
+}
+
+.movie-card:hover {
+transform:none;
+}
+
+.movie-card img {
+height:330px;
+}
+
+.movie-info {
+padding:14px;
+}
+
+.cinema-container {
+width:calc(100% - 28px);
+margin:22px auto;
+padding:18px;
+}
+
+.showtime-grid {
+display:grid;
+grid-template-columns:repeat(2, minmax(0, 1fr));
+gap:12px;
+}
+
+.time-slot {
+padding:12px 8px;
+font-size:14px;
+text-align:center;
+}
+
+.date-bar {
+margin:16px 14px;
+gap:10px;
+}
+
+.date {
+min-width:64px;
+border-radius:8px;
+}
+
+.note {
+margin:14px;
+}
+
+footer {
+margin-top:28px;
+padding:18px 14px;
+font-size:13px;
+}
+
+}
+
+/* ===============================
+   TOKEN PAGE
+================================= */
+
+.token-box{
+text-align:center;
+margin:60px auto;
+background:white;
+padding:40px;
+width:350px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+
+.token-number{
+font-size:70px;
+color:#E50914;
+margin-bottom:15px;
+}
+
+/* ===============================
+   ADMIN PANEL
+================================= */
+
+.admin-box{
+text-align:center;
+margin:60px auto;
+background:white;
+padding:40px;
+width:350px;
+border-radius:10px;
+box-shadow:0 5px 20px rgba(0,0,0,0.1);
+}
+/* ===============================
+   TIME SLOT PAGE
+================================= */
+
+.cinema-container{
+background:white;
+width:80%;
+margin:40px auto;
+padding:25px;
+border-radius:10px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.showtime-grid{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+margin-top:20px;
+}
+
+.time-slot{
+padding:12px 18px;
+border-radius:6px;
+text-decoration:none;
+font-weight:bold;
+border:2px solid #ccc;
+color:#333;
+}
+
+.time-slot.available{
+border-color:green;
+color:green;
+}
+
+.time-slot.filling{
+border-color:orange;
+color:orange;
+}
+
+.time-slot:hover{
+background:#E50914;
+color:white;
+border-color:#E50914;
+}
+
+.note{
+margin-top:15px;
+font-size:14px;
+color:#666;
+}
+/* ===============================
+   DATE SELECTOR
+================================= */
+
+.date-bar{
+display:flex;
+gap:12px;
+margin:20px 50px;
+overflow-x:auto;   /* 🔥 scrollable */
+padding-bottom:10px;
+}
+
+.date{
+min-width:70px;
+background:white;
+padding:10px;
+text-align:center;
+border-radius:10px;
+cursor:pointer;
+box-shadow:0 2px 8px rgba(0,0,0,0.1);
+transition:0.2s;
+}
+
+.date.active{
+background:#E50914;
+color:white;
+}
+
+/* ===============================
+   SIDE MENU
+================================= */
+
+.menu-icon{
+font-size:24px;
+cursor:pointer;
+margin-left:20px;
+}
+
+.side-menu{
+position:fixed;
+top:0;
+right:-300px;
+width:300px;
+height:100%;
+background:white;
+box-shadow:-4px 0 10px rgba(0,0,0,0.2);
+padding:20px;
+transition:0.3s;
+z-index:1000;
+}
+
+.side-menu.active{
+right:0;
+}
+
+.menu-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:20px;
+}
+
+.menu-item{
+padding:15px;
+border-bottom:1px solid #eee;
+cursor:pointer;
+font-weight:500;
+}
+
+.menu-item:hover{
+background:#f5f5f5;
+}
+
+
+/* ===============================
+   NAVBAR BUTTON STYLE
+================================= */
+
+#login-open, #logout-btn {
+    background: #E50914;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+#login-open:hover, #logout-btn:hover {
+    background: #c40812;
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    header {
+        position: sticky;
+        top: 0;
+        z-index: 20;
+        padding: 12px 14px;
+        background: #fff;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+        letter-spacing: 0;
+    }
+
+    nav a,
+    #home-btn {
+        display: inline-block;
+        background: #E50914;
+        color: #fff;
+        padding: 8px 14px;
+        border-radius: 6px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+    }
+
+    .search-bar {
+        width: 100%;
+        order: 3;
+    }
+
+    .search-bar input {
+        width: 100%;
+        padding: 11px 42px 11px 14px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .hero {
+        text-align: left;
+        padding: 46px 18px 52px;
+        background: linear-gradient(135deg, #121212, #3b0d12);
+    }
+
+    .hero h1 {
+        font-size: 30px;
+        line-height: 1.15;
+    }
+
+    .hero p {
+        font-size: 15px;
+        margin-top: 10px;
+        color: #f1f1f1;
+    }
+
+    .hero-btn,
+    .book-btn {
+        border-radius: 6px;
+        min-height: 40px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+    }
+
+    .section-title {
+        margin: 24px 16px 14px;
+        font-size: 20px;
+    }
+
+    .slider {
+        width: 100%;
+        margin: 8px 0 24px;
+        padding: 0 16px 10px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+    }
+
+    .slider-track {
+        gap: 14px;
+        transform: none !important;
+        transition: none !important;
+    }
+
+    .movie-card {
+        width: 72vw;
+        max-width: 240px;
+        min-width: 210px;
+        border-radius: 8px;
+        scroll-snap-align: start;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+    }
+
+    .movie-card:hover {
+        transform: none;
+    }
+
+    .movie-card img {
+        height: 300px;
+        object-fit: cover;
+    }
+
+    .movie-info {
+        padding: 12px;
+    }
+
+    .movie-info h3 {
+        font-size: 16px;
+        min-height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .movie-info p {
+        font-size: 13px;
+    }
+
+    .cinema-container {
+        width: calc(100% - 28px);
+        margin: 18px auto 28px;
+        padding: 16px;
+        border-radius: 8px;
+    }
+
+    .date-bar {
+        margin: 14px 14px 4px;
+        padding-bottom: 8px;
+    }
+
+    .showtime-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 10px;
+    }
+
+    .time-slot {
+        padding: 12px 8px;
+        text-align: center;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    footer {
+        margin-top: 24px;
+        padding: 18px 14px;
+        font-size: 13px;
+    }
+}
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Your Ticket</title>
+<link rel="stylesheet" href="../css/token.css">
+</head>
+
+<body>
+
+<div class="ticket" id="ticket">
+
+<h2>🎟 Movie Ticket</h2>
+
+<p><strong>Name:</strong> <span id="name"></span></p>
+<p><strong>Movie:</strong> <span id="movie"></span></p>
+<p><strong>Time:</strong> <span id="time"></span></p>
+<p><strong>Seats:</strong> <span id="seats"></span></p>
+
+<div class="token" id="token"></div>
+<div id="qrCode" class="qr-code"></div>
+
+<button id="downloadBtn">Download Ticket</button>
+<button id="downloadPdfBtn">Download PDF</button>
+<a href="index.html" class="home-btn">Back to Home</a>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="../js/config.js"></script>
+<script src="../js/token.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,184 @@
+/* ══════════════════════════════ 
+   REGISTRATION PAGE (SAFE CSS)
+══════════════════════════════ */
+
+/* ONLY target registration page */
+.reg-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+}
+
+/* FORM BOX */
+.reg-form form {
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 16px;
+    width: 100%;
+    max-width: 360px;
+    box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+    text-align: center;
+}
+.reg-form form {
+    position: relative; 
+}
+
+/* BACK BUTTON */
+.back-btn {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    color: #333;
+    background: #f5f5f5;
+    padding: 6px 10px;
+    border-radius: 50%;
+    transition: 0.3s;
+}
+
+.back-btn:hover {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* HEADING */
+.reg-form h3 {
+    font-size: 1.6rem;
+    margin-bottom: 5px;
+    color: #222;
+}
+
+.reg-form p {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* INPUT */
+.reg-form .box {
+    width: 100%;
+    padding: 10px 12px;
+    margin: 8px 0;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    outline: none;
+    transition: 0.3s;
+    box-sizing: border-box;
+}
+
+.reg-form .box:focus {
+    border-color: #e74c3c;
+}
+
+.password-field {
+    position: relative;
+}
+
+.password-field .box {
+    padding-right: 72px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 14px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.toggle-password:hover {
+    background: #e4e4e4;
+}
+
+/* ✅ PHONE INPUT FIX (IMPORTANT) */
+.reg-form .iti {
+    width: 100%;
+    margin: 8px 0;
+}
+
+.reg-form .iti input {
+    width: 100% !important;
+    padding: 10px 12px 10px 90px !important; /* left space for flag */
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 0.9rem;
+    height: 40px;
+    box-sizing: border-box;
+}
+
+.reg-form .iti input:focus {
+    border-color: #e74c3c;
+}
+
+/* Fix flag container height */
+.reg-form .iti__flag-container {
+    height: 100%;
+}
+
+/* BUTTON */
+
+.reg-form .iti input {
+    line-height: normal;
+}
+
+.reg-form .btn {
+    width: 100%;
+    margin-top: 12px;
+    padding: 11px;
+    border: none;
+    border-radius: 8px;
+    background: #e74c3c;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.reg-form .btn:hover {
+    background: #c0392b;
+}
+
+ FOOTER
+.credit {
+    text-align: center;
+    font-size: 0.8rem;
+    color: #666;
+    margin-top: 20px;
+} 
+
+@media (max-width: 600px) {
+    header {
+        padding: 12px 16px;
+    }
+
+    .reg-form {
+        min-height: auto;
+        padding: 24px 16px;
+        align-items: flex-start;
+    }
+
+    .reg-form form {
+        max-width: 100%;
+        padding: 32px 18px 22px;
+        border-radius: 8px;
+    }
+
+    .reg-form .box,
+    .reg-form .iti input {
+        font-size: 16px;
+        height: 44px;
+    }
+
+    .toggle-password {
+        top: 13px;
+    }
+}
+

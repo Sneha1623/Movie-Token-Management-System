@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Registration</title>
+<link href="https://cdn.jsdelivr.net/npm/remixicon/fonts/remixicon.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/css/intlTelInput.css"/>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/registration.css">
+</head>
+
+<body>
+
+<header>
+
+<div class="logo">🎬 MovieBooking</div>
+
+<nav>
+<span id="userSection"></span>
+<a href="index.html" id="home-btn">Home</a>
+</nav>
+
+</header>
+
+<div class="reg-form">
+  <form id="signupForm">
+    <a href="index.html" class="back-btn">
+    <i class="ri-arrow-left-line"></i>
+</a>
+    <h3>Sign-up</h3>
+    <p>Create your account now</p>
+
+    <input type="text" id="name" placeholder="Enter your name" class="box" required>
+    <input type="tel" id="mobile" class="box" placeholder="Enter phone number" required>
+    <input type="email" id="email" placeholder="Enter your e-mail" class="box" required>
+    <div class="password-field">
+      <input type="password" id="password" placeholder="Enter your password" class="box" required>
+      <button type="button" class="toggle-password" data-target="password" aria-label="Show password">Show</button>
+    </div>
+
+    <input type="submit" value="Sign-up now" class="btn">
+  
+  </form>
+</div>
+
+<!-- ── CONTACT / FOOTER ── -->
+<footer id="contact">
+    <div class="footer-grid">
+        <div class="footer-col">
+            <h4>🎬 MovieBooking</h4>
+            <p>Your trusted movie booking platform. Find the best movies at the best prices.</p>
+        </div>
+       
+        <div class="footer-col">
+            <h4>Contact Us</h4>
+            <p>📧 info@moviebooking.com</p>
+            <p>📞 +91 98765 43210</p>
+            <p>📍 Rourkela, Odisha</p>
+        </div>
+    </div>
+    </footer>
+
+<footer class="footer">
+<p>© Created by Sneha Sudha Behera</p>
+<p>Movie Token Management System</p>
+</footer>
+
+  <!-- custom js file link  -->
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/intl-tel-input/17.0.19/js/intlTelInput.min.js"></script>
+    <script src="../js/config.js"></script>
+    <script src="../js/line.js"></script>
+
+</body>
+</html>
+
+
+
+

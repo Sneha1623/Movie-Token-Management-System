@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Movie Details</title>
+<link rel="stylesheet" href="../css/style.css">
+<link rel="stylesheet" href="../css/details.css">
+</head>
+
+<body>
+
+<!-- HEADER -->
+<header class="header">  
+<div class="logo">🎬 MovieBooking</div>
+<div class="search-bar">
+<input type="text" id="search" placeholder="Search for Movies..." onkeyup="searchMovie()">
+</div>
+<nav>
+<span id="userSection"></span>
+<a href="index.html" id="home-btn">Home</a>
+</nav>
+</header>
+
+<!-- HERO SECTION -->
+<section class="banner">
+
+    <div class="banner-bg" style="background-image: linear-gradient(to right, black, transparent), url('../images/dd.jpg');"></div>
+ 
+    <div class="banner-content">
+
+        <!-- POSTER -->
+        <div class="poster-box">
+            <img src="../images/Dhurandhar.jpg">
+            <div class="poster-tag">In Cinemas</div>
+        </div>
+
+        <!-- DETAILS -->
+        <div class="movie-details">
+            <h1>DHURANDHAR</h1>
+
+            <div class="rating-box">
+                ⭐ <strong>9.8/10</strong>
+                <span> (2000+ votes) </span>
+                <button class="rate-btn"> Rate now</button>
+            </div>
+
+            <p class="meta">3h 49m • Action, Drama • U/A</p>
+
+            <div class="tags">
+                <span>2D</span>
+                <span>Hindi</span>
+                <span>English</span>
+            </div>
+
+           <button class="book-btn" onclick="goToBooking('DHURANDHAR')">Book Tickets</button>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ABOUT -->
+<section class="card">
+<h2>About the Movie</h2>
+<p>
+Dhurandhar is an intense action thriller that delves into the world of crime, power, and justice. 
+The film follows a fearless and sharp-minded officer who takes on a dangerous criminal empire threatening the peace of society. 
+As he navigates through deception, violence, and high-stakes confrontations, his courage and intelligence are put to the ultimate test. 
+Packed with gripping sequences, powerful performances, and edge-of-the-seat moments, 
+Dhurandhar delivers a compelling story of determination and righteousness.
+</p>
+</section>
+
+<!-- CAST -->
+<section class="card">
+<h2>Cast</h2>
+<div class="cast-container">
+
+<div class="cast-card">
+<img src="../images/ranveer.jpg">
+<p>Ranveer Singh</p>
+</div>
+
+<div class="cast-card">
+<img src="../images/akshaye.jpg">
+<p>Akshaye Khanna</p>
+</div>
+
+<div class="cast-card">
+<img src="../images/sanjay.jpg">
+<p>Sanjay Dutt</p>
+</div>
+
+<div class="cast-card">
+<img src="../images/sara.webp">
+<p>Sara Arjun</p>
+</div>
+
+</div>
+</section>
+
+<!-- CREW -->
+<section class="card">
+<h2>Crew</h2>
+<div class="cast-container">
+
+<div class="cast-card">
+<img src="../images/aditya.jpg">
+<p>Aditya Dhar</p>
+</div>
+
+<div class="cast-card">
+<img src="../images/jyoti.jpg">
+<p>Jyoti Deshpande</p>
+</div>
+
+<div class="cast-card">
+<img src="../images/lokesh.jpg">
+<p>Lokesh Dharr</p>
+</div>
+
+</div>
+</section>
+
+<!-- REVIEWS -->
+<section class="card">
+<h2>Top Reviews</h2>
+
+<div class="review-container">
+
+    <div class="review-card">
+        <div class="review-left">
+            <img src="../images/rahul.jpg" class="user-img">
+            <div>
+                <p class="review-text">🔥 Amazing movie! Must watch.</p>
+                <small>- Rahul</small>
+            </div>
+        </div>
+        <div class="review-right">
+            <span>⭐ 5/5</span>
+            <button class="like-btn">👍</button>
+        </div>
+    </div>
+
+    <div class="review-card">
+        <div class="review-left">
+            <img src="../images/priya.jpg" class="user-img">
+            <div>
+                <p class="review-text">Great action and story.</p>
+                <small>- Priya</small>
+            </div>
+        </div>
+        <div class="review-right">
+            <span>⭐ 4.5/5</span>
+            <button class="like-btn">👍</button>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- RECOMMENDED -->
+<section class="card">
+<h2>You might also like</h2>
+<div class="movie-slider">
+
+    <div class="movie-slide active">
+        <img src="../images/rrr.jpg">
+        <div class="movie-desc">
+            <h3>RRR</h3>
+            <p>RRR is an epic action drama set during British rule, following the journey of two legendary revolutionaries who unite to fight oppression. Filled with powerful emotions, breathtaking action, and a strong message of courage and freedom, the film delivers a grand cinematic experience.</p>
+            <a href="timeslot.html?movie=RRR" class="book-link">Book Now</a>
+        </div>
+    </div>
+
+    <div class="movie-slide">
+        <img src="../images/border.jpg">
+        <div class="movie-desc">
+            <h3>BORDER 2</h3>
+            <p>A patriotic war drama that showcases the bravery and sacrifice of Indian soldiers on the battlefield. Border 2 delivers powerful emotions, intense combat scenes, and a tribute to national heroes.</p>
+           <a href="timeslot.html?movie=BORDER 2" class="book-link">Book Now</a>
+        </div>
+    </div>
+
+    <div class="movie-slide">
+        <img src="../images/maardani.webp">
+        <div class="movie-desc">
+            <h3>MAARDANI 3</h3>
+            <p>A fierce continuation of the Mardaani series, where a determined police officer faces a new and dangerous criminal threat. The film highlights bravery, intelligence, and the fight against crime.</p>
+            <a href="timeslot.html?movie=MAARDANI 3" class="book-link">Book Now</a>
+        </div>
+    </div>
+
+     <div class="movie-slide">
+        <img src="../images/ikkis.jpg">
+        <div class="movie-desc">
+            <h3>IKKIS</h3>
+            <p>Inspired by real-life events, Ikkis tells the story of a young soldier’s courage and dedication to the nation. It’s an emotional journey of valor, sacrifice, and honor.</p>
+           <a href="timeslot.html?movie=IKKIS" class="book-link">Book Now</a>
+        </div>
+    </div>
+
+     <div class="movie-slide">
+        <img src="../images/kerala.avif">
+        <div class="movie-desc">
+            <h3>The Kerala Story 2</h3>
+            <p>A hard-hitting drama exploring sensitive social issues, focusing on truth, resilience, and survival. The film sheds light on real-world challenges with a powerful and emotional narrative.</p>
+            <a href="timeslot.html?movie=The Kerala Story 2" class="book-link">Book Now</a>
+        </div>
+    </div>
+
+</div>
+</section>
+
+<footer class="footer">
+<p>© Created by Sneha Sudha Behera</p>
+<p>Movie Token Management System</p>
+</footer>
+
+
+<script id="s9x2lp">
+function goToBooking(movieName) {
+    window.location.href = "timeslot.html?movie=" + movieName;
+}
+</script>
+
+<script src="../js/details.js"></script>
+<script src="../js/slide.js"></script>
+<script src="../js/script.js"></script>
+
+</body>
+</html>

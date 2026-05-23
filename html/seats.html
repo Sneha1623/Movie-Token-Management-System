@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Select Seats</title>
+<link rel="stylesheet" href="../css/seats.css">
+</head>
+
+<body>
+
+    <!-- 🎬 SEAT POPUP -->
+<!-- 🎬 SEAT POPUP -->
+<div id="seatModal" class="seat-modal">
+  <div class="modal-box">
+
+    <h2>How many seats?</h2>
+
+    <!-- ✅ EMOJI ICON (FIXED) -->
+    <div id="vehicleIcon" class="vehicle">🛵</div>
+
+    <!-- SEAT NUMBERS -->
+    <div class="seat-numbers">
+      <span onclick="selectSeatCount(1, event)">1</span>
+      <span onclick="selectSeatCount(2, event)">2</span>
+      <span onclick="selectSeatCount(3, event)">3</span>
+      <span onclick="selectSeatCount(4, event)">4</span>
+      <span onclick="selectSeatCount(5, event)">5</span>
+      <span onclick="selectSeatCount(6, event)">6</span>
+    </div>
+
+    <!-- PRICE INFO -->
+    <div class="price-section">
+      <div>
+        <h4>RECLINER</h4>
+        <p>₹450</p>
+        <span>AVAILABLE</span>
+      </div>
+
+      <div>
+        <h4>PRIME</h4>
+        <p>₹210</p>
+        <span>AVAILABLE</span>
+      </div>
+
+      <div>
+        <h4>CLASSIC</h4>
+        <p>₹190</p>
+        <span>AVAILABLE</span>
+      </div>
+    </div>
+
+    <!-- BUTTON -->
+    <button class="select-btn" onclick="confirmSeats()">Select Seats</button>
+
+  </div>
+</div>
+
+<a href="#" class="back-btn" onclick="goBack()">
+  ⬅ Back
+</a>
+
+<h2>Select Your Seats</h2>
+<h3 id="movieInfo"></h3>
+
+<div class="screen">SCREEN</div>
+
+<div id="seats"></div>
+
+<div class="summary">
+    <p>Seats Selected: <span id="count">0</span></p>
+    <p>Total: ₹<span id="total">0</span></p>
+    <button onclick="bookSeats()">Confirm Booking</button>
+</div>
+
+<script>
+const params = new URLSearchParams(window.location.search);
+const movie = params.get("movie");
+const time = params.get("time");
+
+document.getElementById("movieInfo").innerText =
+    (movie || "Movie") + " | " + (time || "Time");
+</script>
+
+<script src="../js/config.js"></script>
+<script src="../js/seats.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+/* ── LOGIN POPUP ── */
+.login-container {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: 9999;
+    justify-content: center;
+    align-items: center;
+}
+.login-form {
+    background: #fff;
+    padding: 40px;
+    border-radius: 16px;
+    width: 360px;
+    position: relative;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+.login-form h3 { margin-bottom: 20px; font-size: 1.4rem; color: #222; }
+.login-form .box {
+    width: 100%;
+    padding: 12px 16px;
+    margin-bottom: 14px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    outline: none;
+}
+.login-form .box:focus { border-color: #e74c3c; }
+.password-field {
+    position: relative;
+}
+
+.password-field .box {
+    padding-right: 72px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 8px;
+    top: 6px;
+    padding: 6px 10px;
+    border: none;
+    border-radius: 6px;
+    background: #f2f2f2;
+    color: #333;
+    cursor: pointer;
+    font-size: 0.8rem;
+}
+
+.toggle-password:hover {
+    background: #e4e4e4;
+}
+.login-form .btn {
+    width: 100%;
+    padding: 12px;
+    background: #e74c3c;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-bottom: 12px;
+}
+.login-form .remember { display: flex; align-items: center; gap: 8px; font-size: 0.85rem; margin-bottom: 14px; }
+.login-form p { font-size: 0.85rem; color: #666; text-align: center; }
+.login-form p a { color: #e74c3c; text-decoration: none; font-weight: 600; }
+#close-login {
+    position: absolute;
+    top: 14px; right: 18px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #999;
+}
+
+@media (max-width: 600px) {
+    .login-container {
+        padding: 18px;
+        align-items: flex-start;
+        padding-top: 12vh;
+    }
+
+    .login-form {
+        width: 100%;
+        max-width: 360px;
+        padding: 32px 20px 24px;
+        border-radius: 8px;
+    }
+
+    .login-form .box {
+        font-size: 16px;
+    }
+}

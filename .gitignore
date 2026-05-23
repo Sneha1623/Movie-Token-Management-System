@@ -1,0 +1,32 @@
+node_modules/
+.idea/
+.vscode/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Generated web assets
+www/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Android generated files
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+android/captures/
+android/.cxx/
+*.apk
+*.aab
+
+# Capacitor / Gradle temp files
+android/app/src/main/assets/public/

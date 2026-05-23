@@ -1,0 +1,99 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f4f4;
+}
+
+.ticket {
+    width: 350px;
+    margin: 60px auto;
+    padding: 25px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.ticket h2 {
+    margin-bottom: 15px;
+}
+
+.ticket p {
+    margin: 8px 0;
+    font-size: 15px;
+}
+
+.token {
+    font-size: 26px;
+    font-weight: bold;
+    color: red;
+    margin: 20px 0;
+}
+
+.qr-code {
+    display: flex;
+    justify-content: center;
+    margin: 18px 0;
+}
+
+.qr-code img,
+.qr-code canvas {
+    width: 150px;
+    height: 150px;
+}
+
+button, .home-btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    background: red;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+button:hover, .home-btn:hover {
+    background: darkred;
+}
+
+@media print {
+    body {
+        background: #fff;
+    }
+
+    button,
+    .home-btn {
+        display: none;
+    }
+
+    .ticket {
+        box-shadow: none;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 18px 14px;
+    }
+
+    .ticket {
+        width: 100%;
+        margin: 20px auto;
+        padding: 22px 16px;
+        border-radius: 8px;
+    }
+
+    .token {
+        font-size: 22px;
+        overflow-wrap: anywhere;
+    }
+
+    button,
+    .home-btn {
+        border-radius: 8px;
+        font-size: 15px;
+    }
+}

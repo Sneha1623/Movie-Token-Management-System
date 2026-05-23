@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Payment</title>
+<link rel="stylesheet" href="../css/payment.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>💳 Payment</h2>
+
+<div class="summary">
+    <p><strong>Movie:</strong> <span id="movie"></span></p>
+    <p><strong>Time:</strong> <span id="time"></span></p>
+    <p><strong>Seats:</strong> <span id="seats"></span></p>
+    <p><strong>Total:</strong> ₹<span id="total"></span></p>
+</div>
+
+<div class="payment-box">
+    <select id="paymentMethod">
+        <option value="">Select Payment Method</option>
+        <option>UPI</option>
+        <option>Card</option>
+        <option>Net Banking</option>
+    </select>
+
+    <input type="text" id="paymentDetails" placeholder="Enter Payment Details">
+
+    <button id="payBtn">Pay Now</button>
+</div>
+
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/payment.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,9 @@
+{
+  "appId": "com.movietokenmanagement.app",
+  "appName": "Movie Token Management",
+  "webDir": "www",
+  "server": {
+    "androidScheme": "http",
+    "cleartext": true
+  }
+}

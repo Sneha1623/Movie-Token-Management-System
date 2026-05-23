@@ -1,0 +1,28 @@
+{
+  "name": "movie-token-management",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "android:prepare": "node scripts/prepare-capacitor-web.js",
+    "android:add": "npx cap add android",
+    "android:sync": "npm run android:prepare && npx cap sync android",
+    "android:open": "npx cap open android",
+    "android:build": "npm run android:sync && cd android && powershell -NoProfile -Command \"$env:JAVA_HOME='C:\\Program Files\\Java\\jdk-24'; $env:PATH='$env:JAVA_HOME\\bin;' + $env:PATH; .\\gradlew.bat assembleDebug\"",
+    "test": "node --check backend/server.js && node --check backend/routes/auth.js && node --check backend/routes/bookings.js && node --check backend/routes/seats.js && node --check backend/routes/ticket.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@capacitor/android": "^8.3.0",
+    "@capacitor/cli": "^8.3.0",
+    "@capacitor/core": "^8.3.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^9.4.1"
+  }
+}

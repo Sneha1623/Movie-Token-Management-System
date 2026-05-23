@@ -1,0 +1,60 @@
+/* HEADER FULL FIX */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+    background-color: #f5f5f5;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* LOGO */
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: red;
+}
+
+/* NAV BAR */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+/* NAV LINKS */
+nav a {
+    text-decoration: none;
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+    padding: 6px 12px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+/* HOVER EFFECT */
+nav a:hover {
+    background-color: #ff4d4d;
+    color: white;
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 12px 16px;
+        gap: 10px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    nav {
+        gap: 10px;
+    }
+
+    nav a {
+        font-size: 14px;
+        padding: 6px 10px;
+    }
+}
